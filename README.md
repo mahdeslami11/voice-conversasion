@@ -11,3 +11,7 @@
 - add postnet and mel-scale
 - 口音轉換
 - instance norm
+
+amir dibmohamadi
+39912340048010
+olom tahghighat
