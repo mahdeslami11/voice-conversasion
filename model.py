@@ -225,6 +225,7 @@ class Decoder(nn.Module):
         self.emb = nn.Embedding(c_a, emb_size)
         self.linear = nn.Linear(2*c_h + emb_size, c_out)
 
+        
     def forward(self, x, c):
         # conv layer
         inp = append_emb(c, self.emb, x.size(2), x)
@@ -306,7 +307,7 @@ class Encoder(nn.Module):
         out = torch.cat([out, out_rnn], dim=1)
         out = linear(out, self.linear) 
         return out
-
+  # more layer
 if __name__ == '__main__':
     E1, E2 = Encoder(513).cuda(), Encoder(513).cuda()
     D = Decoder().cuda()
